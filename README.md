@@ -1,2 +1,4 @@
-# testing-tool-project-adsantos97
-testing-tool-project-adsantos97 created by GitHub Classroom
+# Testing Tool Project
+   Arizza Santos
+   Dr. Raunak
+   CS483: Software Testing   
