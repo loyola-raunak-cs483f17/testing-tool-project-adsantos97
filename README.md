@@ -29,21 +29,21 @@
       Test used: a = q, b = 1  
       Expected: Exception  
    * Add by zero (positive)
-      Test used: a = 0, b = 2  
-      Expected: 0  
+      Test used: a = 0, b = 5  
+      Expected: 5  
    * Add by zero (negative)
-      Test used: a = 0, b = 2  
-      Expected: 0  
+      Test used: a = 0, b = -1  
+      Expected: -1  
    * Both negative (sum)
-      Test used: a = 0, b = 2  
-      Expected: 0  
+      Test used: a = -5, b = -3  
+      Expected: -8  
    * Both positive (sum)
-      Test used: a = 0, b = 2  
-      Expected: 0  
+      Test used: a = 8, b = 9  
+      Expected: 17  
    * More then 10 (sum)
-      Test used: a = 0, b = 2  
-      Expected: 0  
+      Test used: a = 12, b = 18  
+      Expected: 30  
    * Failed
-      Test used: a = 0, b = 2  
+      Test used: a = 9, b = n  
       Expected: Exception 
    
