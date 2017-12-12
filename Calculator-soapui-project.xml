@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9f977fb5-674f-4386-8a38-f91f1d55b60a" activeEnvironment="Default" name="Calculator" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="TestSuite 1"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="0d835383-d2d4-45da-a6eb-b1d9247a84c7" wsaVersion="NONE" name="CalculatorSoapBinding" type="wsdl" bindingName="{http://com}CalculatorSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/arizz/eclipse-workspace/CalculatorExample/WebContent/wsdl/Calculator.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\arizz\eclipse-workspace\CalculatorExample\WebContent\wsdl\Calculator.wsdl"><con:part><con:url>file:\C:\Users\arizz\eclipse-workspace\CalculatorExample\WebContent\wsdl\Calculator.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://com" xmlns:intf="http://com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://com" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="sum">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:int"/>
+            <element name="b" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sumResponse">
+        <complexType>
+          <sequence>
+            <element name="sumReturn" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="product">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:int"/>
+            <element name="b" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="productResponse">
+        <complexType>
+          <sequence>
+            <element name="productReturn" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="sumResponse">
+    <wsdl:part element="impl:sumResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sumRequest">
+    <wsdl:part element="impl:sum" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="productResponse">
+    <wsdl:part element="impl:productResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="productRequest">
+    <wsdl:part element="impl:product" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Calculator">
+    <wsdl:operation name="sum">
+      <wsdl:input message="impl:sumRequest" name="sumRequest"></wsdl:input>
+      <wsdl:output message="impl:sumResponse" name="sumResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product">
+      <wsdl:input message="impl:productRequest" name="productRequest"></wsdl:input>
+      <wsdl:output message="impl:productResponse" name="productResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorSoapBinding" type="impl:Calculator">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sum">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="sumRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sumResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="productRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="productResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorService">
+    <wsdl:port binding="impl:CalculatorSoapBinding" name="Calculator">
+      <wsdlsoap:address location="http://localhost:8080/CalculatorExample/services/Calculator"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint></con:endpoints><con:operation id="c82dddcd-089c-46e6-8455-b74ac9908bbe" isOneWay="false" action="" name="product" bindingOperationName="product" type="Request-Response" outputName="productResponse" inputName="productRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="59b71a0c-3558-49fd-b0eb-504eefa04cfb" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:product>\r
+         <com:a>3</com:a>\r
+         <com:b>2</com:b>\r
+      </com:product>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com/Calculator/productRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8c367420-e2f1-4a62-9544-9191bf947041" isOneWay="false" action="" name="sum" bindingOperationName="sum" type="Request-Response" outputName="sumResponse" inputName="sumRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6f5b1a96-6d4f-44f2-b194-39e4b237161f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:sum>\r
+         <com:a>?</com:a>\r
+         <com:b>?</com:b>\r
+      </com:sum>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://com/Calculator/sumRequest"/></con:call></con:operation></con:interface><con:testSuite id="d3e06e25-9949-4ad7-bc67-5e4b2708162a" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="f8dfacae-e7e0-4a82-ac05-5905a4151e75" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Product" searchProperties="true"><con:settings/><con:testStep type="request" name="Multiply_by_zero_positive" id="163e735a-39e8-4009-b788-c501224448f3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>product</con:operation><con:request name="Multiply_by_zero_positive" id="904116e5-583c-418f-ba7f-425e29d7f7db"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:product>\r
+         <com:a>0</com:a>\r
+         <com:b>2</com:b>\r
+      </com:product>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="d01f06df-3d62-4343-9bff-4b5497fb04ea" name="Contains"><con:configuration><token>0</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="76c261fd-5fdd-40e7-bcbe-84cbc772aeb8" name="VerifyTag"><con:configuration><token>productReturn</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Multiply_by_zero_negative" id="8a69fa0e-9240-468f-a404-850c89f1bdb2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>product</con:operation><con:request name="Multiply_by_zero_negative" id="ad7da58b-0028-4acf-b4d6-efa9f4e4200a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:product>\r
+         <com:a>0</com:a>\r
+         <com:b>-1</com:b>\r
+      </com:product>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="a9212b76-2816-4131-b1bd-2b51a39b09d0" name="Contains"><con:configuration><token>0</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="51081a0f-2ae2-4789-9341-0ae11b387af9" name="VerifyTag"><con:configuration><token>productReturn</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Both_negative" id="2e9a3687-c9d7-450e-8e11-c879332efdf1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>product</con:operation><con:request name="Both_negative" id="b706b877-68b6-4656-802a-71bb7545ec84"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:product>\r
+         <com:a>-1</com:a>\r
+         <com:b>-6</com:b>\r
+      </com:product>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="da8c23ce-14ff-436b-8031-9242881742b2" name="Contains"><con:configuration><token>6</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="05a8f5f6-2f36-41f5-9a16-9612fd02890b" name="VerifyTag"><con:configuration><token>productReturn</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Both_positive" id="3babed00-9d42-45c3-be1a-28fb5590dd77"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>product</con:operation><con:request name="Both_positive" id="506ecdd7-d8e6-4388-b419-8233163be0aa"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:product>\r
+         <com:a>2</com:a>\r
+         <com:b>5</com:b>\r
+      </com:product>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="0c36dd84-f031-4e97-a3c3-389c58936f87" name="Contains"><con:configuration><token>10</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="77b32c46-a4db-4650-87c2-f7dbef713b44" name="VerifyTag"><con:configuration><token>productReturn</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="More_Than_10" id="66427b27-dfd2-48c0-8b08-7160687f67cd"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>product</con:operation><con:request name="More_Than_10" id="fc3caee8-9ba0-4b34-a013-61362c0bfea1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:product>\r
+         <com:a>11</com:a>\r
+         <com:b>11</com:b>\r
+      </com:product>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="b57603e0-6c07-4891-b8d3-f31b4f6dc915" name="Contains"><con:configuration><token>121</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="1e7ee96a-a3fe-481b-ade0-1079ae3e2549" name="VerifyTag"><con:configuration><token>productReturn</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Failed" id="cb2d44a5-365a-4b16-b625-0330ed199156"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>product</con:operation><con:request name="Failed" id="3eda071f-9451-457d-9696-04ea48892372"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:product>\r
+         <com:a>q</com:a>\r
+         <com:b>1</com:b>\r
+      </com:product>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple NotContains" id="3c56cd3f-a516-4b0f-bfcb-040774dbd2a2" name="VerifyTag"><con:configuration><token>productReturn</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="9b06bb86-befb-40ba-9679-6ee3598cf91c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Sum" searchProperties="true"><con:settings/><con:testStep type="request" name="Add_by_zero_positive" id="76543895-ae40-4e13-b1d6-ae109eb3f452"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>sum</con:operation><con:request name="Add_by_zero_positive" id="fcedaaee-1da8-4f95-9a32-a06ee81e3783"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:sum>\r
+         <com:a>0</com:a>\r
+         <com:b>5</com:b>\r
+      </com:sum>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="c9139a11-754c-4019-a8f3-28cd57415313" name="Contains"><con:configuration><token>5</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="af26a2e9-ab4d-4722-934a-464a00c25b0d" name="VerifyPath"><con:configuration><token>sumReturn</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Add_by_zero_negative" id="4ea63767-3a48-423f-8445-2ce990c6b32d"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>sum</con:operation><con:request name="Add_by_zero_negative" id="d5792f56-7334-4141-ae09-6f4381b7b9c0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:sum>\r
+         <com:a>0</com:a>\r
+         <com:b>-1</com:b>\r
+      </com:sum>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="8cd7412a-eb59-4ec9-adce-b993fe305a5c" name="Contains"><con:configuration><token>-1</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="41fab50b-9e3d-4f7f-aa5a-5b30d10e3787" name="VerifyPath"><con:configuration><token>sumReturn</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Both_negative" id="a53a610c-2204-4971-a114-dc83a6d0d011"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>sum</con:operation><con:request name="Both_negative" id="12ad28dc-02f6-42fa-9f56-bc08774af556"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:sum>\r
+         <com:a>-5</com:a>\r
+         <com:b>-3</com:b>\r
+      </com:sum>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="0ad7f2c4-730a-4b8e-a58a-6a92363b93eb" name="Contains"><con:configuration><token>-8</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="cd879703-a59d-44cd-97de-7713f172982c" name="VerifyPath"><con:configuration><token>sumReturn</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Both_positive" id="3a533b87-93a9-4e5f-a920-cc85bec39a99"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>sum</con:operation><con:request name="Both_positive" id="7550df6a-0f34-411e-be6c-7c16145bf3ee"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:sum>\r
+         <com:a>8</com:a>\r
+         <com:b>9</com:b>\r
+      </com:sum>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="c98dd9c4-5c92-43cc-befb-8efc58bd1153" name="Contains"><con:configuration><token>17</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="dec126c9-42c8-44f6-a958-d94c11a0aefa" name="VerifyPath"><con:configuration><token>sumReturn</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="More_Than_10" id="73524e43-d513-447f-9ce5-66615daeeccb"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>sum</con:operation><con:request name="More_Than_10" id="f5552a31-d352-4359-9a19-2b627a2b44cd"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:sum>\r
+         <com:a>12</com:a>\r
+         <com:b>18</com:b>\r
+      </com:sum>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="bb33aa39-bc8a-4d29-8b68-c43a823ee2be" name="Contains"><con:configuration><token>30</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="537488ff-5ca2-4579-a96d-1d6c994752b0" name="VerifyPath"><con:configuration><token>sumReturn</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Failed" id="9f8e4670-5a7d-441d-9709-71476441d35d"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapBinding</con:interface><con:operation>sum</con:operation><con:request name="Failed" id="1a8c8f55-c17a-4f2f-9d8f-315c32bb7fc9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/CalculatorExample/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:sum>\r
+         <com:a>9</com:a>\r
+         <com:b>n</com:b>\r
+      </com:sum>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple NotContains" id="add4b174-088e-40ef-b05f-94cb93db165a" name="VerifyPath"><con:configuration><token>sumReturn</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
